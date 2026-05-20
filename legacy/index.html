@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shruti Keshri | AI Engineer & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Shruti Keshri. I blend Data Science & AI with Full-Stack Engineering to build smart, real-time digital systems.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Chubby Bubbly Game-Style light purple SVG Cursor -->
+  <div id="custom-cursor">
+    <svg class="cursor-arrow-svg" viewBox="0 0 42 42" width="38" height="38" style="filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.15));">
+      <defs>
+        <!-- Bouncy wet-look glossy light purple gradient -->
+        <linearGradient id="bubblePurple" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F3E8FF" />
+          <stop offset="45%" stop-color="#D6B8FF" />
+          <stop offset="100%" stop-color="#9C5CFC" />
+        </linearGradient>
+        <!-- Bubbly 3D Bevel base gradient -->
+        <linearGradient id="bubbleBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#6F44B8" />
+          <stop offset="100%" stop-color="#4C258E" />
+        </linearGradient>
+      </defs>
+      
+      <!-- Chubby 3D extrusion underlay -->
+      <path d="M 5,5 C 3,8 2,16 5,22 C 6,24 8,24 9,22 C 10,20 11,18 13,16 L 21,24 C 23,26 26,23 24,21 L 16,13 C 18,10 20,10 22,9 C 24,8 24,6 22,5 C 16,3 10,3 5,5 Z" 
+            fill="url(#bubbleBevel)" stroke="#1E1E24" stroke-width="3" stroke-linejoin="round" transform="translate(1.5, 2.5)" />
+      
+      <!-- Chubby main arrow face -->
+      <path d="M 5,5 C 3,8 2,16 5,22 C 6,24 8,24 9,22 C 10,20 11,18 13,16 L 21,24 C 23,26 26,23 24,21 L 16,13 C 18,10 20,10 22,9 C 24,8 24,6 22,5 C 16,3 10,3 5,5 Z" 
+            fill="url(#bubblePurple)" stroke="#1E1E24" stroke-width="3" stroke-linejoin="round" />
+      
+      <!-- Glass highlight reflective pill at top-left edge -->
+      <path d="M 7,7 C 5.5,8 4.5,12 6,15 C 6.5,16 7,16 7.5,15.5 C 8,15 7.5,14 7,13 C 6,11 6.5,9 7.5,8 C 8,7.5 7.5,6.5 7,7 Z" 
+            fill="#FFFFFF" opacity="0.8" />
+      
+      <!-- Tiny bubbly circular light-reflections -->
+      <circle cx="7.5" cy="7.5" r="1.5" fill="#FFFFFF" opacity="0.9" />
+      <circle cx="11.5" cy="9.5" r="1" fill="#FFFFFF" opacity="0.7" />
+      <ellipse cx="18" cy="18" rx="1" ry="2" fill="#FFFFFF" opacity="0.5" transform="rotate(-45 18 18)" />
+    </svg>
+  </div>
+
+  <div class="app-container">
+
+    <!-- ================= SECTION 1: HERO ================= -->
+    <header class="hero-section">
+      <div class="hero-intro">
+        <span class="handwritten">Hi, I'm</span>
+        <span class="badge lavender">Shruti Keshri 🚀</span>
+      </div>
+      
+      <h1 class="hero-headline">
+        I blend <span class="marker-highlight">Data Science & AI</span> with <span class="marker-highlight">Full-Stack Development</span> to build systems that actually <span class="rust-text">work
+          <svg class="svg-annotation" viewBox="0 0 200 20" preserveAspectRatio="none">
+            <path d="M5,15 C50,2 150,2 195,15 C150,18 50,18 5,15" stroke="#C84B31" stroke-width="4" fill="none" />
+          </svg>
+        </span>
+      </h1>
+
+      <div class="hero-meta-row">
+        <div class="badge sage">AI Intern @ Verto Solutions</div>
+        <div class="badge lavender">SIH 2025 Runner-Up</div>
+        <div class="badge rust">BML Munjal Univ '27</div>
+      </div>
+
+      <div class="hero-interactive-trigger">
+        <div class="avatar-character">
+          <!-- Stylized hand-drawn face SVG -->
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="45" r="30" stroke="#1E1E24" stroke-width="3" fill="none" />
+            <!-- Eyes -->
+            <circle cx="40" cy="40" r="4" fill="#1E1E24" />
+            <circle cx="60" cy="40" r="4" fill="#1E1E24" />
+            <!-- Winking eye alternate -->
+            <!-- Cute Smile -->
+            <path d="M40,55 Q50,65 60,55" stroke="#1E1E24" stroke-width="3" fill="none" stroke-linecap="round" />
+            <!-- Hair bangs -->
+            <path d="M20,40 Q50,15 80,40" stroke="#1E1E24" stroke-width="3" fill="none" />
+            <path d="M15,45 L20,35 M85,45 L80,35" stroke="#1E1E24" stroke-width="3" />
+          </svg>
+        </div>
+        <div class="hero-arrow-container">
+          <span class="handwritten">Okay so... how do I do that?</span>
+          <svg class="wiggle-arrow" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C84B31" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= SECTION 2: CASE STUDIES ================= -->
+    <main>
+      <section id="work-section">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">
+            Featured Projects
+            <svg class="svg-annotation circle-annotation" viewBox="0 0 200 80" preserveAspectRatio="none">
+              <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#C84B31" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+          </h2>
+        </div>
+
+        <div class="case-studies-grid">
+          <!-- Case Study 1: Swap Station -->
+          <div class="case-study-row">
+            <div class="case-study-details">
+              <div class="case-study-header">
+                <span class="badge rust">Active</span>
+                <span class="badge sage">Jan 2026 - Present</span>
+              </div>
+              <h3 class="case-study-title">Swap Station — Smart EV Ops</h3>
+              <p class="case-study-description">
+                Built a high-performance real-time EV swap-station monitoring system featuring intelligent AI automation and live synthetic telemetry simulation pipelines.
+              </p>
+              <ul class="case-study-bullets">
+                <li>Designed AI-driven anomaly triggering rules for battery pack state-of-health diagnostics.</li>
+                <li>Created a high-fidelity React + Node.js dashboard connected with mock continuous data flows.</li>
+                <li>Enabled operational alerts to automate fast de-risking for on-ground mechanics.</li>
+              </ul>
+              <div class="case-study-tech">
+                <span class="badge lavender">Python</span>
+                <span class="badge lavender">Node.js</span>
+                <span class="badge lavender">React.js</span>
+                <span class="badge lavender">REST APIs</span>
+                <span class="badge lavender">Real-time Data</span>
+              </div>
+              <div class="case-study-links">
+                <a href="https://github.com/shrutikeshri111" target="_blank" class="flat-btn primary">
+                  View Code
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- CSS-based Dashboard Representation -->
+            <div class="case-study-preview">
+              <div class="mockup-container">
+                <div class="mockup-header">
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-title-bar">ev-swap-ops-dashboard.shrutikeshri.com</span>
+                </div>
+                <div class="mockup-body">
+                  <div class="dashboard-grid">
+                    <div class="dashboard-panel">
+                      <div class="panel-title">Operational Status</div>
+                      <div class="panel-val" style="color: #27C93F;">ONLINE</div>
+                    </div>
+                    <div class="dashboard-panel">
+                      <div class="panel-title">Active Stations</div>
+                      <div class="panel-val">42 / 42</div>
+                    </div>
+                    <div class="dashboard-panel full">
+                      <div class="panel-title">AI Decision Analytics: Anomaly Diagnostics</div>
+                      <div class="chart-bar-container">
+                        <div class="chart-row">
+                          <span>BAT-102</span>
+                          <div class="chart-fill-bg">
+                            <div class="chart-fill" style="width: 92%;"></div>
+                          </div>
+                          <span>92%</span>
+                        </div>
+                        <div class="chart-row">
+                          <span>SYS-TEMP</span>
+                          <div class="chart-fill-bg">
+                            <div class="chart-fill blue" style="width: 45%;"></div>
+                          </div>
+                          <span>45%</span>
+                        </div>
+                        <div class="chart-row">
+                          <span>CYC-DEG</span>
+                          <div class="chart-fill-bg">
+                            <div class="chart-fill" style="width: 78%; background-color: var(--lavender);"></div>
+                          </div>
+                          <span>78%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Study 2: Joblyt -->
+          <div class="case-study-row reversed">
+            <div class="case-study-details">
+              <div class="case-study-header">
+                <span class="badge lavender">Completed</span>
+                <span class="badge sage">June 2025 - July 2025</span>
+              </div>
+              <h3 class="case-study-title">Joblyt — AI Recruitment Assistant</h3>
+              <p class="case-study-description">
+                Developed an AI-driven JD-CV match ranking application designed to automate matching pipelines, score accuracy, and index candidate properties.
+              </p>
+              <ul class="case-study-bullets">
+                <li>Integrated NLP models to handle semantic matching scoring across multi-format resumes.</li>
+                <li>Created custom automated candidate ranking metrics to de-risk recruiting pipelines.</li>
+                <li>Built clean interfaces in React + JavaScript with robust Python backend scoring scripts.</li>
+              </ul>
+              <div class="case-study-tech">
+                <span class="badge lavender">Python</span>
+                <span class="badge lavender">React</span>
+                <span class="badge lavender">NLP</span>
+                <span class="badge lavender">Resume Parsing</span>
+                <span class="badge lavender">Semantic Search</span>
+              </div>
+              <div class="case-study-links">
+                <a href="https://github.com/shrutikeshri111" target="_blank" class="flat-btn primary">
+                  View Code
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- CSS-based Dashboard Representation -->
+            <div class="case-study-preview">
+              <div class="mockup-container">
+                <div class="mockup-header">
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-dot"></span>
+                  <span class="mockup-title-bar">joblyt-matching.shrutikeshri.com</span>
+                </div>
+                <div class="mockup-body">
+                  <div class="dashboard-grid">
+                    <div class="dashboard-panel full">
+                      <div class="panel-title">JD Match Engine</div>
+                      <div class="panel-val" style="font-size: 1.1rem; color: #FFF; margin-bottom: 8px;">Semantic Accuracy Profile</div>
+                      <div class="chart-bar-container">
+                        <div class="chart-row">
+                          <span>Candidate A</span>
+                          <div class="chart-fill-bg">
+                            <div class="chart-fill" style="width: 88%; background-color: var(--rust-red);"></div>
+                          </div>
+                          <span>88%</span>
+                        </div>
+                        <div class="chart-row">
+                          <span>Candidate B</span>
+                          <div class="chart-fill-bg">
+                            <div class="chart-fill" style="width: 95%; background-color: #27C93F;"></div>
+                          </div>
+                          <span>95%</span>
+                        </div>
+                        <div class="chart-row">
+                          <span>Candidate C</span>
+                          <div class="chart-fill-bg">
+                            <div class="chart-fill" style="width: 62%; background-color: var(--lavender);"></div>
+                          </div>
+                          <span>62%</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dashboard-panel" style="grid-column: span 2;">
+                      <div class="panel-title">Semantic Scoring Details</div>
+                      <span style="font-size: 0.7rem; color: #ABB2BF;">Skills Matched: Python, React, n8n, AI Integrations</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+
+
+      <!-- ================= SECTION 4: SKILLS SANDBOX ================= -->
+      <section style="padding: 60px 0;">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">
+            The Toolkit 🛠️
+            <svg class="svg-annotation circle-annotation" viewBox="0 0 200 80" preserveAspectRatio="none">
+              <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#C84B31" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </h2>
+        </div>
+
+        <div class="skills-sandbox-grid">
+          <!-- Sticker Sheet Card -->
+          <div class="flat-card sandbox-card span-2">
+            <div class="starburst-sticker">I EXPERIMENT<br>A LOT</div>
+            <h3 style="font-size: 1.6rem; margin-bottom: 20px;">The Sticker Sheet</h3>
+            <p class="handwritten" style="font-size: 1.1rem; color: var(--rust-red); margin-bottom: 24px; max-width: 80%;">
+              "Experiments help me learn fast, de-risk decisions, and find the version that actually works for real people."
+            </p>
+            <div class="sticker-sheet">
+              <div class="sticker rust" style="--rot: -3deg;">Python 🐍</div>
+              <div class="sticker sage" style="--rot: 2deg;">React ⚛️</div>
+              <div class="sticker lavender" style="--rot: -1deg;">n8n Automation 🤖</div>
+              <div class="sticker" style="--rot: 4deg;">C++ 💻</div>
+              <div class="sticker sage" style="--rot: -2deg;">Node.js 🟢</div>
+              <div class="sticker lavender" style="--rot: 3deg;">Hugging Face 🤗</div>
+              <div class="sticker rust" style="--rot: -4deg;">RAG Systems 🔍</div>
+              <div class="sticker" style="--rot: 1deg;">FastAPI ⚡</div>
+              <div class="sticker sage" style="--rot: 2deg;">Express 📂</div>
+              <div class="sticker lavender" style="--rot: -2deg;">PostgreSQL 🐘</div>
+              <div class="sticker rust" style="--rot: 3deg;">NLP 🧠</div>
+              <div class="sticker" style="--rot: -1deg;">JavaScript 💛</div>
+              <div class="sticker sage" style="--rot: 4deg;">MySQL 🐬</div>
+              <div class="sticker lavender" style="--rot: -3deg;">MongoDB 🍃</div>
+              <div class="sticker rust" style="--rot: 1deg;">LLM Integrations 🔮</div>
+            </div>
+          </div>
+
+          <!-- Dynamic Timeline Card -->
+          <div class="flat-card sandbox-card">
+            <h3 style="font-size: 1.6rem; margin-bottom: 12px;">Execution Blueprint</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">How I structure my workflow to execute end-to-end.</p>
+            
+            <div class="timeline-graph-container">
+              <svg class="timeline-svg">
+                <!-- Smooth curved timeline line passing through nodes -->
+                <path d="M 10 80 Q 75 20 135 120 T 260 80" />
+              </svg>
+              <div class="timeline-nodes">
+                <div class="timeline-node-item">
+                  <div class="timeline-node-dot"></div>
+                  <span class="timeline-node-label">Why</span>
+                </div>
+                <div class="timeline-node-item">
+                  <div class="timeline-node-dot"></div>
+                  <span class="timeline-node-label">What</span>
+                </div>
+                <div class="timeline-node-item">
+                  <div class="timeline-node-dot"></div>
+                  <span class="timeline-node-label">How</span>
+                </div>
+                <div class="timeline-node-item">
+                  <div class="timeline-node-dot"></div>
+                  <span class="timeline-node-label">AI</span>
+                </div>
+                <div class="timeline-node-item">
+                  <div class="timeline-node-dot"></div>
+                  <span class="timeline-node-label">Components</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SECTION 5: EDUCATION & TECHNICAL BLUEPRINT ================= -->
+      <section style="padding: 60px 0;">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">
+            Technical Blueprint
+            <svg class="svg-annotation circle-annotation" viewBox="0 0 200 80" preserveAspectRatio="none">
+              <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#C84B31" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </h2>
+        </div>
+
+        <div class="blueprint-split">
+          <!-- Figma Component Property Panel -->
+          <div class="figma-properties-panel">
+            <div class="figma-panel-header">
+              <span class="figma-panel-title">Component Properties</span>
+              <div class="figma-panel-tabs">
+                <span class="figma-tab active">Design</span>
+                <span class="figma-tab">Prototype</span>
+              </div>
+            </div>
+            
+            <div class="figma-panel-section">
+              <div class="figma-section-title">Component Styling</div>
+              <div class="figma-row">
+                <span class="figma-label">Highlight Tint</span>
+                <select class="figma-select" id="figma-color-tint">
+                  <option value="var(--sage-green)">Sage Green</option>
+                  <option value="var(--lavender)">Lilac Lavender</option>
+                  <option value="var(--rust-red)">Rust Red</option>
+                </select>
+              </div>
+              <div class="figma-row">
+                <span class="figma-label">Font Weight</span>
+                <select class="figma-select" id="figma-font-weight">
+                  <option value="normal">Normal (400)</option>
+                  <option value="bold" selected>Bold (700)</option>
+                  <option value="800">Black (800)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="figma-panel-section">
+              <div class="figma-section-title">Component Switches</div>
+              <div class="figma-row">
+                <span class="figma-label">Show Credentials</span>
+                <div>
+                  <input type="checkbox" id="figma-credentials-switch" class="figma-switch-input" checked>
+                  <label for="figma-credentials-switch" class="figma-switch-label"></label>
+                </div>
+              </div>
+              <div class="figma-row">
+                <span class="figma-label">Dark Mode Simulation</span>
+                <div>
+                  <input type="checkbox" id="figma-dark-switch" class="figma-switch-input">
+                  <label for="figma-dark-switch" class="figma-switch-label"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Window displaying Education & Awards -->
+          <div class="blueprint-display">
+            <div class="editor-window" id="education-editor-window">
+              <div class="editor-header">
+                <div class="editor-tab-row">
+                  <span class="editor-tab active" id="tab-education">education_blueprint.json</span>
+                </div>
+                <span style="font-size: 0.75rem; color: #666; font-weight: bold;">JSON READ ONLY</span>
+              </div>
+              <div class="editor-body">
+                <!-- B.Tech -->
+                <div class="editor-item">
+                  <div class="editor-meta">B.Tech - 2023 to Present</div>
+                  <div class="editor-title" id="edu-card-1">BML Munjal University</div>
+                  <div class="editor-desc">Computer Science Engineering — Specialisation in Data Science & AI</div>
+                  <div class="editor-subdesc">CGPA: 7.00</div>
+                </div>
+
+                <!-- Experience (AI Intern @ Verto) -->
+                <div class="editor-item">
+                  <div class="editor-meta">Work Experience - June 2025 to July 2025</div>
+                  <div class="editor-title">Verto Solutions Limited — AI Intern</div>
+                  <div class="editor-desc">Architected AI-driven CV automation matching system, parser pipelines, and scaled workflow automations integrating LLMs.</div>
+                </div>
+
+                <!-- High School (Toggled via Figma panel) -->
+                <div class="editor-item" id="high-school-credentials">
+                  <div class="editor-meta">Higher Secondary — 2021 to 2023</div>
+                  <div class="editor-title">CBSE Science High School (Patna)</div>
+                  <div class="editor-desc">Score Average: 82.3%</div>
+                </div>
+
+                <!-- Awards -->
+                <div class="editor-item">
+                  <div class="editor-meta">Awards & Recognition</div>
+                  <div class="award-item">
+                    <strong style="color: var(--rust-red);">Smart India Hackathon (SIH) 2025</strong><br>
+                    <span style="font-size: 0.85rem; color: #ABB2BF;">2nd Runner-Up at the college level.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= SECTION 6: FOOTER ================= -->
+    <footer class="footer-section">
+      <div class="footer-left">
+        <div class="footer-philosophy">
+          If the code doesn't solve a <span class="marker-highlight">real problem</span> for a real human, it doesn't matter how pretty the math is. I design systems to be <span class="marker-highlight">simple, useful, and robust</span>.
+        </div>
+        <p class="handwritten" style="font-size: 1.3rem;">"Keep experimenting. Keep building. Keep learning."</p>
+      </div>
+
+      <div class="footer-right">
+        <!-- Interactive wave illustration using Pure SVG -->
+        <svg viewBox="0 0 100 100" width="120" height="120" style="align-self: center; transform: rotate(-5deg);">
+          <!-- Wave hello cartoon face and waving hand -->
+          <circle cx="50" cy="50" r="30" stroke="#1E1E24" stroke-width="3" fill="var(--lavender)" />
+          <!-- Big happy eyes -->
+          <ellipse cx="40" cy="45" rx="3" ry="5" fill="#1E1E24" />
+          <ellipse cx="60" cy="45" rx="3" ry="5" fill="#1E1E24" />
+          <!-- Waving hand -->
+          <path d="M80,35 Q85,15 75,10 Q65,15 70,35" stroke="#1E1E24" stroke-width="3" fill="var(--rust-red)" />
+          <path d="M70,35 L80,35" stroke="#1E1E24" stroke-width="3" />
+          <!-- Mouth -->
+          <path d="M42,60 Q50,70 58,60" stroke="#1E1E24" stroke-width="3" fill="none" stroke-linecap="round" />
+        </svg>
+
+        <div class="chat-bubble-cta">
+          If this made sense, let's chat!
+        </div>
+
+        <div class="contact-card flat-card">
+          <div class="email-copy-wrapper">
+            <div class="email-address" id="email-text">shrutikeshri111@gmail.com</div>
+            <button class="copy-btn" id="copy-email-btn">Copy Email</button>
+          </div>
+
+          <div class="footer-social-links">
+            <a href="https://linkedin.com" target="_blank" class="flat-btn">
+              LinkedIn Profile
+            </a>
+            <a href="https://github.com/shrutikeshri111" target="_blank" class="flat-btn">
+              GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        © 2026 Shruti Keshri. Built with ❤️ and high-fidelity micro-interactions.
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
