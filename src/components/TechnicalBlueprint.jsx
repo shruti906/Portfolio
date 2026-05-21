@@ -26,27 +26,24 @@ export default function TechnicalBlueprint() {
       year: '2023 – Present',
       emoji: '🎓',
       institution: 'BML Munjal University',
-      degree: 'B.Tech CSE',
-      spec: 'Data Science & AI',
+      degree: 'B.Tech CSE — Data Science & AI',
       grade: 'CGPA: 7.00',
       color: 'purple'
     },
     {
       year: '2021 – 2023',
       emoji: '📜',
-      institution: 'CBSE Science',
-      degree: 'Class XII',
-      spec: 'Patna, Bihar',
-      grade: 'Score: 82.3%',
+      institution: 'CBSE Science (Patna, Bihar)',
+      degree: 'Class XII — 82.3%',
+      grade: '',
       color: 'teal'
     },
     {
       year: '2011 – 2021',
       emoji: '📘',
-      institution: 'ICSE',
-      degree: 'Class X',
-      spec: 'Patna, Bihar',
-      grade: 'Score: 86%',
+      institution: 'ICSE (Patna, Bihar)',
+      degree: 'Class X — 86%',
+      grade: '',
       color: 'purple'
     }
   ];
@@ -94,8 +91,7 @@ export default function TechnicalBlueprint() {
                 <div className="card-emoji-header">{edu.emoji}</div>
                 <h3 className="neon-institution">{edu.institution}</h3>
                 <h4 className="neon-degree">{edu.degree}</h4>
-                <p className="neon-spec">{edu.spec}</p>
-                <div className="neon-grade">{edu.grade}</div>
+                {edu.grade && <div className="neon-grade">{edu.grade}</div>}
                 
                 {/* Visual stamp highlight */}
                 <div className="neon-corner-glow"></div>
