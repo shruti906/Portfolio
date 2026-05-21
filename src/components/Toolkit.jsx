@@ -99,11 +99,6 @@ export default function Toolkit() {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        {/* Starburst Corner Sticker Overlay */}
-        <div className="starburst-sticker absolute-star">
-          EXPERIMENT<br />A LOT
-        </div>
-
         <div className="sticker-sheet-canvas">
           {stickers.map((sticker, idx) => (
             <div 

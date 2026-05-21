@@ -771,7 +771,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .toolkit-subtitle {
   text-align: center;
-  margin: 15px auto 40px auto;
+  margin: 15px auto 12px auto;
   max-width: 650px;
   font-size: 1.25rem;
   color: var(--text-muted);
@@ -782,9 +782,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
   max-width: 1100px;
-  min-height: 380px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 0 30px 10px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -936,6 +935,10 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: hidden;
   transition: var(--transition-spring);
+}
+
+.education-section .section-title-wrapper {
+  margin: 20px 0 40px 0;
 }
 
 .education-section:hover {
@@ -1106,7 +1109,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .timeline-card-node.rust:hover .timeline-chunky-year {
   background: linear-gradient(180deg, transparent 50%, var(--rust-red) 50%);
-  color: white;
+  color: var(--primary-charcoal);
 }
 
 /* Scrapbook Sticker Card styling */
