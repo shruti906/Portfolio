@@ -87,7 +87,7 @@ export default function Navbar() {
 
             {/* Tab 2: "Resume" */}
             <a 
-              href="/resume.pdf" 
+              href="/Final_Resume (1).pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="nav-capsule resume-btn"
