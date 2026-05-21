@@ -46,36 +46,30 @@ body {
   position: relative;
 }
 
+/* Custom Cursor Follower */
 #custom-cursor {
   position: fixed;
   top: 0;
   left: 0;
+  width: auto;
+  height: auto;
   pointer-events: none;
   z-index: 10000;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #D6C7E8;
-  border: 2.5px solid var(--primary-charcoal);
-  border-radius: 9999px;
-  padding: 8px 18px;
-  box-shadow: 4px 4px 0px var(--primary-charcoal);
-  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
-  white-space: nowrap;
+  transform: translate(-5px, -5px); /* Align the bubbly top-left tip precisely with click coordinate */
+  transition: transform 0.08s ease-out;
 }
 
 #custom-cursor.active {
-  transform: translate(-50%, -50%) scale(1.12);
-  background-color: #E2F0D9; /* Transition to soft green on active elements */
+  transform: translate(-5px, -5px) scale(1.15);
 }
 
-.cursor-pill-text {
-  font-family: var(--font-handwritten);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--primary-charcoal);
-  letter-spacing: 0.02em;
+.cursor-arrow-svg {
+  flex-shrink: 0;
+  transition: var(--transition-spring);
+}
+
+#custom-cursor.active .cursor-arrow-svg {
+  transform: scale(0.9) rotate(-15deg); /* Bouncy squish-click effect typical of cartoon buttons */
 }
 
 /* Typography styles */
