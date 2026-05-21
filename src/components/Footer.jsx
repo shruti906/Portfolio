@@ -98,7 +98,6 @@ export default function Footer() {
 
         <div className="avatar-meta-container">
           <div className="avatar-label-name">Shruti</div>
-          <div className="avatar-label-debug handwritten">(waving, probably mid-debug)</div>
         </div>
 
         {/* Geekout sub-bubble container */}
@@ -126,10 +125,10 @@ export default function Footer() {
         <button 
           className="contact-bubble email-bubble" 
           onClick={handleCopy}
-          style={{
-            backgroundColor: isCopied ? 'var(--sage-green)' : '#FFFFFF',
-            transform: isCopied ? 'scale(1.05)' : 'none',
-          }}
+          style={isCopied ? {
+            backgroundColor: 'var(--sage-green)',
+            transform: 'scale(1.05)',
+          } : undefined}
         >
           <span className="email-emoji">📧</span>
           <span className="email-text">{isCopied ? 'Copied! ✨' : emailText}</span>

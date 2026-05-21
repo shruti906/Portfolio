@@ -1440,14 +1440,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .email-bubble:hover {
+  background-color: #f0e6ff;
+  color: #7c3aed;
+  border-color: #7c3aed;
+  box-shadow: 7px 7px 0px #7c3aed;
   transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0px var(--primary-charcoal);
-  background-color: #fbfbfb;
 }
 
 .email-bubble:active {
   transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0px var(--primary-charcoal);
+  box-shadow: 3px 3px 0px #7c3aed;
 }
 
 .tap-to-copy-text {
@@ -1463,16 +1465,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .linkedin-bubble:hover {
-  background-color: #e8f4fd;
-  color: #0077b5;
-  border-color: #0077b5;
-  box-shadow: 7px 7px 0px #0077b5;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border-color: #0369a1;
+  box-shadow: 7px 7px 0px #0369a1;
   transform: translate(-2px, -2px);
 }
 
 .linkedin-bubble:active {
   transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0px #0077b5;
+  box-shadow: 3px 3px 0px #0369a1;
 }
 
 .github-bubble {
@@ -1481,16 +1483,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .github-bubble:hover {
-  background-color: #f6f8fa;
-  color: #24292e;
-  border-color: #24292e;
-  box-shadow: 7px 7px 0px #24292e;
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  box-shadow: 7px 7px 0px #0f172a;
   transform: translate(-2px, -2px);
 }
 
 .github-bubble:active {
   transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0px #24292e;
+  box-shadow: 3px 3px 0px #0f172a;
 }
 
 .leetcode-bubble {
@@ -1499,16 +1501,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .leetcode-bubble:hover {
-  background-color: #fff8f0;
-  color: #ffa116;
-  border-color: #ffa116;
-  box-shadow: 7px 7px 0px #ffa116;
+  background-color: #fff7ed;
+  color: #ea580c;
+  border-color: #ea580c;
+  box-shadow: 7px 7px 0px #ea580c;
   transform: translate(-2px, -2px);
 }
 
 .leetcode-bubble:active {
   transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0px #ffa116;
+  box-shadow: 3px 3px 0px #ea580c;
 }
 
 .footer-credits {
