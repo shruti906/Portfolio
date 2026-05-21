@@ -30,6 +30,7 @@ export default function App() {
           if (entry.target.classList.contains('case-study-row')) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
           }
           obs.unobserve(entry.target); // Trigger only once
         }

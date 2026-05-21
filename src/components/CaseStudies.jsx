@@ -3,13 +3,24 @@ import React from 'react';
 export default function CaseStudies() {
   return (
     <section id="work-section">
-      <div className="section-title-wrapper">
+      <div className="section-title-wrapper projects-main-title">
         <h2 className="section-title">
           Featured Projects
           <svg className="svg-annotation circle-annotation" viewBox="0 0 200 80" preserveAspectRatio="none">
             <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#C84B31" strokeWidth="3" fill="none" strokeLinecap="round"/>
           </svg>
         </h2>
+        
+        {/* Minimal line-art character / indicator at the top pointing downward with hand-drawn underline */}
+        <div className="section-entry-indicator">
+          <span className="entry-pointing-character">👇</span>
+          <span className="entry-text">
+            Here's how
+            <svg className="svg-annotation svg-underline" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M5,5 Q50,9 95,5" stroke="#C84B31" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+            </svg>
+          </span>
+        </div>
       </div>
 
       <div className="case-studies-grid">
@@ -20,7 +31,14 @@ export default function CaseStudies() {
               <span className="badge rust">Active</span>
               <span className="badge sage">Jan 2026 - Present</span>
             </div>
+            
             <h3 className="case-study-title">Swap Station — Smart EV Ops</h3>
+            
+            {/* Metadata Tags (Year & Domain) */}
+            <div className="case-study-metadata">
+              2026 | AI, Product Design, Research
+            </div>
+            
             <p className="case-study-description">
               Built a high-performance real-time EV swap-station monitoring system featuring intelligent AI automation and live synthetic telemetry simulation pipelines.
             </p>
@@ -54,53 +72,23 @@ export default function CaseStudies() {
             </div>
           </div>
 
-          {/* CSS-based Dashboard Representation */}
+          {/* Crisp Rectangle Mockup Canvas Container with rounded corners and looping video */}
           <div className="case-study-preview">
-            <div className="mockup-container">
-              <div className="mockup-header">
-                <span className="mockup-dot"></span>
-                <span className="mockup-dot"></span>
-                <span className="mockup-dot"></span>
-                <span className="mockup-title-bar">ev-swap-ops-dashboard.shrutikeshri.com</span>
-              </div>
-              <div className="mockup-body">
-                <div className="dashboard-grid">
-                  <div className="dashboard-panel">
-                    <div className="panel-title">Operational Status</div>
-                    <div className="panel-val" style={{ color: '#27C93F' }}>ONLINE</div>
-                  </div>
-                  <div className="dashboard-panel">
-                    <div className="panel-title">Active Stations</div>
-                    <div className="panel-val">42 / 42</div>
-                  </div>
-                  <div className="dashboard-panel full">
-                    <div className="panel-title">AI Decision Analytics: Anomaly Diagnostics</div>
-                    <div className="chart-bar-container">
-                      <div className="chart-row">
-                        <span>BAT-102</span>
-                        <div className="chart-fill-bg">
-                          <div className="chart-fill" style={{ width: '92%' }}></div>
-                        </div>
-                        <span>92%</span>
-                      </div>
-                      <div className="chart-row">
-                        <span>SYS-TEMP</span>
-                        <div className="chart-fill-bg">
-                          <div className="chart-fill blue" style={{ width: '45%' }}></div>
-                        </div>
-                        <span>45%</span>
-                      </div>
-                      <div className="chart-row">
-                        <span>CYC-DEG</span>
-                        <div className="chart-fill-bg">
-                          <div className="chart-fill" style={{ width: '78%', backgroundColor: 'var(--lavender)' }}></div>
-                        </div>
-                        <span>78%</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Reading Time absolute tilted tag overlay on card edge */}
+            <div className="reading-time-badge tilted-pill lime-green">
+              ⏱️ 5m Read
+            </div>
+            
+            <div className="mockup-media-canvas">
+              <video 
+                className="project-mockup-video"
+                src="https://assets.mixkit.co/videos/preview/mixkit-typing-code-on-a-laptop-42171-large.mp4"
+                poster="/swap-station.png"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
           </div>
         </div>
@@ -112,7 +100,14 @@ export default function CaseStudies() {
               <span className="badge lavender">Completed</span>
               <span className="badge sage">June 2025 - July 2025</span>
             </div>
+            
             <h3 className="case-study-title">Joblyt — AI Recruitment Assistant</h3>
+            
+            {/* Metadata Tags (Year & Domain) */}
+            <div className="case-study-metadata">
+              2025 | AI, NLP, Web Applications
+            </div>
+            
             <p className="case-study-description">
               Developed an AI-driven JD-CV match ranking application designed to automate matching pipelines, score accuracy, and index candidate properties.
             </p>
@@ -146,52 +141,36 @@ export default function CaseStudies() {
             </div>
           </div>
 
-          {/* CSS-based Dashboard Representation */}
+          {/* Crisp Rectangle Mockup Canvas Container with rounded corners and looping video */}
           <div className="case-study-preview">
-            <div className="mockup-container">
-              <div className="mockup-header">
-                <span className="mockup-dot"></span>
-                <span className="mockup-dot"></span>
-                <span className="mockup-dot"></span>
-                <span className="mockup-title-bar">joblyt-matching.shrutikeshri.com</span>
-              </div>
-              <div className="mockup-body">
-                <div className="dashboard-grid">
-                  <div className="dashboard-panel full">
-                    <div className="panel-title">JD Match Engine</div>
-                    <div className="panel-val" style={{ fontSize: '1.1rem', color: '#FFF', marginBottom: '8px' }}>Semantic Accuracy Profile</div>
-                    <div className="chart-bar-container">
-                      <div className="chart-row">
-                        <span>Candidate A</span>
-                        <div className="chart-fill-bg">
-                          <div className="chart-fill" style={{ width: '88%', backgroundColor: 'var(--rust-red)' }}></div>
-                        </div>
-                        <span>88%</span>
-                      </div>
-                      <div className="chart-row">
-                        <span>Candidate B</span>
-                        <div className="chart-fill-bg">
-                          <div className="chart-fill" style={{ width: '95%', backgroundColor: '#27C93F' }}></div>
-                        </div>
-                        <span>95%</span>
-                      </div>
-                      <div className="chart-row">
-                        <span>Candidate C</span>
-                        <div className="chart-fill-bg">
-                          <div className="chart-fill" style={{ width: '62%', backgroundColor: 'var(--lavender)' }}></div>
-                        </div>
-                        <span>62%</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="dashboard-panel" style={{ gridColumn: 'span 2' }}>
-                    <div className="panel-title">Semantic Scoring Details</div>
-                    <span style={{ fontSize: '0.7rem', color: '#ABB2BF' }}>Skills Matched: Python, React, n8n, AI Integrations</span>
-                  </div>
-                </div>
-              </div>
+            {/* Reading Time absolute tilted tag overlay on card edge */}
+            <div className="reading-time-badge tilted-pill purple-badge">
+              ⏱️ 3m Read
+            </div>
+            
+            <div className="mockup-media-canvas">
+              <video 
+                className="project-mockup-video"
+                src="https://assets.mixkit.co/videos/preview/mixkit-cyber-security-dashboard-with-graphs-and-data-49033-large.mp4"
+                poster="/joblyt.png"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Footnote sketch at the base */}
+      <div className="projects-footnote-wrapper">
+        <div className="projects-footnote handwritten">
+          <svg className="svg-pencil animate-draw-pencil" viewBox="0 0 24 24" fill="none" stroke="#C84B31" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span className="footnote-text">...with more in the works</span>
         </div>
       </div>
     </section>
