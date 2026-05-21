@@ -1743,7 +1743,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   INTERACTIVE STICKY NAVIGATION HEADER (GLASSMORPHISM & SPRING BADGES)
+   MINIMAL PRODUCT DESIGN STICKY HEADER (BORDERLESS & CAPSULE TABS)
    ========================================================================== */
 
 .navbar-wrapper {
@@ -1752,12 +1752,12 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   width: 100%;
-  height: 76px;
+  height: 68px;
   z-index: 9999;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-15px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-10px);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Scrolled state triggered past hero statement */
@@ -1770,11 +1770,10 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-glass-bg {
   width: 100%;
   height: 100%;
-  background-color: rgba(253, 253, 253, 0.72);
+  background-color: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: var(--border-width) solid var(--primary-charcoal);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  border: none; /* Completely borderless header bar */
 }
 
 .navbar-content {
@@ -1787,174 +1786,170 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
-/* LEFT SIDE: DYNAMIC LOGO/SIGNATURE */
+/* LEFT SIDE: THE HAND-DRAWN MONOGRAM LOGO (NAKED) */
 .navbar-logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;
   cursor: pointer;
 }
 
-.navbar-logo-badge {
-  width: 46px;
-  height: 46px;
+.navbar-logo-naked {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-card);
-  border: var(--border-width) solid var(--primary-charcoal);
-  border-radius: 50%;
-  box-shadow: 3px 3px 0px var(--primary-charcoal);
-  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.15s ease-out;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .navbar-logo-svg {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 42px;
 }
 
-/* Micro-interaction for logo hover */
-.navbar-logo-container:hover .navbar-logo-badge {
-  transform: scale(1.1) rotate(15deg) !important;
-  box-shadow: 5px 5px 0px var(--primary-charcoal);
+.navbar-logo-svg path {
+  stroke: var(--primary-charcoal);
 }
 
-.logo-text {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--primary-charcoal);
-  line-height: 1;
-  margin-top: 4px;
-  letter-spacing: -0.01em;
+/* Micro-interaction for naked logo hover */
+.navbar-logo-container:hover .navbar-logo-naked {
+  transform: scale(1.08) rotate(8deg) !important;
 }
 
-/* RIGHT SIDE: NAVIGATION STICKER PILLS */
+/* RIGHT SIDE: MINIMALIST PILL TABS */
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
 }
 
-.nav-sticker {
+.nav-capsule {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 20px;
-  border-radius: 9999px;
-  border: var(--border-width) solid var(--primary-charcoal);
-  font-size: 0.9rem;
-  font-weight: 800;
+  gap: 6px;
+  padding: 7px 15px;
+  border-radius: 9999px; /* Rounded capsules */
+  font-size: 0.8rem;
+  font-weight: 700;
   text-decoration: none;
-  color: var(--primary-charcoal);
-  box-shadow: 3px 3px 0px var(--primary-charcoal);
-  background: #FFFFFF;
   cursor: pointer;
+  box-shadow: none; /* Zero hard shadows */
   
-  /* Bouncy spring-like physics translation and scale curve */
+  /* Ultra-smooth spring transition curve (stiffness: 200, damping: 15) */
   transition: 
-    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-    background-color 0.3s ease, 
-    border-color 0.3s ease, 
-    box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15), 
+    background-color 0.25s ease, 
+    border-color 0.25s ease;
 }
 
-/* My Work Pill Badge */
+/* Tab 1: "My Work" Capsule (Light off-white) */
 .work-btn {
-  background-color: #FAF9F6; /* Crisp off-white */
+  background-color: #F5F5F7;
+  color: var(--primary-charcoal);
+  border: 1px solid rgba(30, 30, 36, 0.08);
 }
 
 .work-btn:hover {
-  background-color: #F0EEE9;
+  background-color: #EAEAEF;
+  border-color: rgba(30, 30, 36, 0.15);
 }
 
-/* How I Think Pill Badge (Contrast solid graphite) */
+/* Tab 2: "Resume" Capsule (Contrast dark charcoal) */
 .resume-btn {
   background-color: var(--primary-charcoal);
   color: #FFFFFF;
-  box-shadow: 3px 3px 0px var(--rust-red); /* Contrasting rust-red shadow */
+  border: 1px solid var(--primary-charcoal);
 }
 
 .resume-btn:hover {
   background-color: #2D2D35;
-  box-shadow: 5px 5px 0px var(--rust-red);
+  border-color: #2D2D35;
 }
 
-/* Contact Pill Badge */
+/* Tab 3: "Contact Me" Capsule (Clean white) */
 .contact-btn {
   background-color: #FFFFFF;
+  color: var(--primary-charcoal);
+  border: 1px solid rgba(30, 30, 36, 0.08);
 }
 
 .contact-btn:hover {
-  background-color: #F8F9FA;
+  background-color: #FAF9F6;
+  border-color: rgba(30, 30, 36, 0.15);
 }
 
-/* Vector icon interactive rotates */
+/* Vector icon transitions inside capsules */
 .nav-icon {
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  color: var(--rust-red);
-}
-
-.nav-sticker:hover .nav-icon {
-  transform: rotate(15deg) scale(1.15);
-}
-
-.nav-icon-logo {
+  color: var(--primary-charcoal);
+  opacity: 0.8;
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-sticker:hover .nav-icon-logo {
-  transform: scale(1.2) rotate(-12deg);
+.nav-capsule:hover .nav-icon {
+  transform: rotate(-10deg) scale(1.08);
 }
 
-/* HOVER SPRING SCALING AND PRESSED TACTILE COMPRESSION */
-.nav-sticker:hover {
-  transform: scale(1.04);
-  box-shadow: 5px 5px 0px var(--primary-charcoal);
+.nav-icon-arrow {
+  color: #FFFFFF;
+  opacity: 0.85;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-sticker:active {
-  transform: scale(0.95) !important;
-  box-shadow: 1px 1px 0px var(--primary-charcoal) !important;
+.nav-capsule:hover .nav-icon-arrow {
+  transform: translate(1.5px, -1.5px);
 }
 
-.resume-btn:active {
-  box-shadow: 1px 1px 0px var(--rust-red) !important;
+.nav-swirl-icon {
+  opacity: 0.95;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* RESPONSIVE NAV MOBILE LAYOUT */
+.nav-capsule:hover .nav-swirl-icon {
+  transform: scale(1.15) rotate(15deg);
+}
+
+/* TACTILE HOVER (+3% Spring) & PRESS COMPRESSION (scale: 0.95) */
+.nav-capsule:hover {
+  transform: scale(1.03); /* +3% scaling on hover */
+}
+
+.nav-capsule:active {
+  transform: scale(0.95) !important; /* Instant tactile compression on click */
+}
+
+/* RESPONSIVE MOBILE CAPSULE HEADER */
 @media (max-width: 768px) {
   .navbar-wrapper {
-    height: 68px;
+    height: 58px;
   }
   .navbar-content {
     padding: 0 16px;
   }
-  .navbar-logo-badge {
-    width: 38px;
-    height: 38px;
-  }
   .navbar-logo-svg {
-    width: 36px;
-    height: 36px;
-  }
-  .logo-text {
-    display: none; /* Hide signature text on mobile to fit badges nicely */
+    width: 38px;
+    height: 34px;
   }
   .navbar-links {
-    gap: 8px;
-  }
-  .nav-sticker {
-    padding: 7px 14px;
-    font-size: 0.8rem;
     gap: 6px;
   }
-  .nav-icon {
-    width: 14px;
-    height: 14px;
+  .nav-capsule {
+    padding: 5px 11px;
+    font-size: 0.72rem;
+    gap: 4px;
   }
-  .nav-icon-logo {
-    width: 16px;
-    height: 16px;
+  .nav-icon {
+    width: 11px;
+    height: 11px;
+  }
+  .nav-icon-arrow {
+    width: 10px;
+    height: 10px;
+  }
+  .nav-swirl-icon {
+    width: 12px;
+    height: 12px;
   }
 }
+
 
