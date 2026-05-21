@@ -24,14 +24,15 @@ export default function Navbar() {
   // Compute scroll rotation angle for monogram wobble
   const rotationAngle = Math.sin(scrollY * 0.015) * 8;
 
-  // 3 preset hand-sketched marker variants of 'SK' monogram to give a frame-by-frame living sketch effect
+  // 3 preset hand-sketched marker variants of 'AR' monogram with double ticks above 'R'
+  // to give a frame-by-frame living sketch effect as the user scrolls
   const sketchPaths = [
     // Variant A
-    "M 12,28 C 12,28 17,14 20,10 C 23,6 27,6 27,10 C 27,14 18,22 17,25 C 16,28 12,32 10,29 C 8,26 14,18 19,14 C 24,10 28,10 30,14 M 26,10 C 26,10 25,28 25,32 C 25,34 27,36 29,32 M 34,14 C 34,14 28,20 25,22 C 27,24 31,28 35,32",
-    // Variant B
-    "M 13,29 C 13,29 18,15 21,11 C 24,7 28,7 28,11 C 28,15 19,23 18,26 C 17,29 13,33 11,30 C 9,27 15,19 20,15 C 25,11 29,11 31,15 M 27,11 C 27,11 26,29 26,33 C 26,35 28,37 30,33 M 35,15 C 35,15 29,21 26,23 C 28,25 32,29 36,33",
-    // Variant C
-    "M 11,27 C 11,27 16,13 19,9 C 22,5 26,5 26,9 C 26,13 17,21 16,24 C 15,27 11,31 9,28 C 7,25 13,17 18,13 C 23,9 27,9 29,13 M 25,9 C 25,9 24,27 24,31 C 24,31 26,35 28,31 M 33,13 C 33,13 27,19 24,21 C 26,23 30,27 34,31"
+    "M 10,32 L 15,10 C 15,10 17,6 20,6 C 23,6 24,10 24,14 L 24,32 M 13,22 L 23,22 M 24,20 C 24,20 28,14 32,14 C 36,14 38,17 36,22 C 34,27 30,32 30,32 L 35,32 M 34,10 L 36,6 M 38,12 L 40,8",
+    // Variant B (slightly nudged)
+    "M 10.5,31.5 L 14.8,10.2 C 14.8,10.2 16.9,6.2 19.8,6.2 C 22.8,6.2 23.8,10.2 23.8,13.8 L 24.2,31.8 M 13.5,21.8 L 22.8,22.2 M 24.2,19.8 C 24.2,19.8 28.2,13.8 32.2,13.8 C 35.8,13.8 37.8,16.8 35.8,21.8 C 33.8,26.8 29.8,31.8 29.8,31.8 L 34.8,32.2 M 33.8,10.2 L 35.8,6.2 M 37.8,12.2 L 39.8,8.2",
+    // Variant C (slightly nudged other way)
+    "M 9.5,32.5 L 15.2,9.8 C 15.2,9.8 17.1,5.8 20.2,5.8 C 23.2,5.8 24.2,9.8 24.2,14.2 L 23.8,32.2 M 12.5,22.2 L 23.2,21.8 M 23.8,20.2 C 23.8,20.2 27.8,14.2 31.8,14.2 C 36.2,14.2 38.2,17.2 36.2,22.2 C 34.2,27.2 30.2,32.2 30.2,32.2 L 35.2,31.8 M 34.2,9.8 L 36.2,5.8 M 38.2,11.8 L 40.2,7.8"
   ];
 
   // Cycles sketch paths relative to scroll movement to create organic drawing effect
@@ -54,7 +55,7 @@ export default function Navbar() {
       <header className="navbar-glass-bg">
         <div className="navbar-content">
           
-          {/* LEFT SIDE: THE DYNAMIC NAKED SIGNATURE */}
+          {/* LEFT SIDE: THE DYNAMIC NAKED 'AR' SIGNATURE */}
           <div className="navbar-logo-container">
             <div 
               className="navbar-logo-naked"
@@ -63,7 +64,7 @@ export default function Navbar() {
               <svg viewBox="0 0 46 42" className="navbar-logo-svg">
                 <path 
                   d={currentPath}
-                  stroke="var(--primary-charcoal)" 
+                  stroke="rgba(30, 30, 36, 0.45)" 
                   strokeWidth="3.2" 
                   fill="none" 
                   strokeLinecap="round" 
@@ -73,7 +74,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* RIGHT SIDE: MINIMALIST TABS */}
+          {/* RIGHT SIDE: WOBBLY TABS */}
           <nav className="navbar-links">
             
             {/* Tab 1: "My Work" */}
@@ -82,40 +83,43 @@ export default function Navbar() {
               className="nav-capsule work-btn"
               onClick={(e) => handleScrollTo(e, 'work-section')}
             >
-              {/* Micro Search / Grid Icon */}
-              <svg className="nav-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              {/* Hand-drawn Asterisk/Starburst Icon */}
+              <svg className="nav-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <line x1="7" y1="7" x2="17" y2="17"></line>
+                <line x1="7" y1="17" x2="17" y2="7"></line>
               </svg>
               <span>My Work</span>
             </a>
 
-            {/* Tab 2: "Resume" */}
+            {/* Tab 2: "How I Think" */}
             <a 
               href="/resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="nav-capsule resume-btn"
+              className="nav-capsule think-btn"
             >
-              <span>Resume</span>
-              {/* Tiny External Link Arrow Icon */}
-              <svg className="nav-icon-arrow" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
+              {/* Hand-drawn speech bubble icon */}
+              <svg className="nav-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M 20,10 C 20,6 16,3 12,3 C 8,3 4,6 4,10 C 4,12 5,14 7,16 L 6,20 L 11,18 C 12,18 12,18 12,18 C 16,18 20,14 20,10 Z" />
               </svg>
+              <span>How I Think</span>
             </a>
 
-            {/* Tab 3: "Contact Me" */}
+            {/* Tab 3: "LinkedIn" */}
             <a 
-              href="#contact-section" 
-              className="nav-capsule contact-btn"
-              onClick={(e) => handleScrollTo(e, 'contact-section')}
+              href="https://linkedin.com/in/shrutikeshri09" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="nav-capsule linkedin-btn"
             >
-              {/* Tiny Hand-Drawn Swirling Loop Icon */}
-              <svg className="nav-swirl-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--rust-red)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M 4,12 C 4,6 9,6 12,12 C 15,18 20,18 20,12 C 20,6 15,6 12,12 C 9,18 4,18 4,12 Z" />
+              {/* LinkedIn vector icon with white square backdrop */}
+              <svg className="nav-icon-linkedin" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="4" fill="#FFFFFF" />
+                <path d="M9 17V10H7v7h2zm-1-8.2c.7 0 1.2-.5 1.2-1.2S8.7 6.4 8 6.4 6.8 6.9 6.8 7.6 7.3 8.8 8 8.8zM17 17v-4.2c0-2.2-1.2-3.2-2.7-3.2-1.2 0-1.8.7-2.1 1.2v-1H10v7.2h2.2v-4c0-.2 0-.4.1-.6.2-.4.6-.9 1.2-.9 1 0 1.4.8 1.4 2v3.5H17z" fill="var(--primary-charcoal)" />
               </svg>
-              <span>Contact Me</span>
+              <span>LinkedIn</span>
             </a>
 
           </nav>

@@ -1809,7 +1809,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-logo-svg path {
-  stroke: var(--primary-charcoal);
+  stroke: rgba(30, 30, 36, 0.45);
 }
 
 /* Micro-interaction for naked logo hover */
@@ -1817,7 +1817,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.08) rotate(8deg) !important;
 }
 
-/* RIGHT SIDE: MINIMALIST PILL TABS */
+/* RIGHT SIDE: WOBBLY CAPSULE TABS */
 .navbar-links {
   display: flex;
   align-items: center;
@@ -1828,9 +1828,9 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 15px;
-  border-radius: 9999px; /* Rounded capsules */
-  font-size: 0.8rem;
+  padding: 6px 14px;
+  font-family: var(--font-handwritten); /* Hand-drawn Architects Daughter font */
+  font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
   cursor: pointer;
@@ -1840,73 +1840,67 @@ h1, h2, h3, h4, h5, h6 {
   transition: 
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15), 
     background-color 0.25s ease, 
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
 
-/* Tab 1: "My Work" Capsule (Light off-white) */
+/* Tab 1: "My Work" Capsule (Light gray, wobbly outline) */
 .work-btn {
-  background-color: #F5F5F7;
-  color: var(--primary-charcoal);
-  border: 1px solid rgba(30, 30, 36, 0.08);
+  background-color: #F0F0F0;
+  color: rgba(30, 30, 36, 0.65);
+  border: 1.5px solid rgba(30, 30, 36, 0.22);
+  border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px;
 }
 
 .work-btn:hover {
-  background-color: #EAEAEF;
-  border-color: rgba(30, 30, 36, 0.15);
+  background-color: #E6E6E9;
+  border-color: rgba(30, 30, 36, 0.32);
 }
 
-/* Tab 2: "Resume" Capsule (Contrast dark charcoal) */
-.resume-btn {
-  background-color: var(--primary-charcoal);
-  color: #FFFFFF;
-  border: 1px solid var(--primary-charcoal);
-}
-
-.resume-btn:hover {
-  background-color: #2D2D35;
-  border-color: #2D2D35;
-}
-
-/* Tab 3: "Contact Me" Capsule (Clean white) */
-.contact-btn {
+/* Tab 2: "How I Think" Capsule (Clean white, wobbly outline) */
+.think-btn {
   background-color: #FFFFFF;
-  color: var(--primary-charcoal);
-  border: 1px solid rgba(30, 30, 36, 0.08);
+  color: rgba(30, 30, 36, 0.65);
+  border: 1.5px solid rgba(30, 30, 36, 0.22);
+  border-radius: 20px 255px 20px 225px / 225px 20px 255px 20px;
 }
 
-.contact-btn:hover {
-  background-color: #FAF9F6;
-  border-color: rgba(30, 30, 36, 0.15);
+.think-btn:hover {
+  background-color: #F8F8F9;
+  border-color: rgba(30, 30, 36, 0.32);
+}
+
+/* Tab 3: "LinkedIn" Capsule (Solid charcoal, wobbly outline, white text) */
+.linkedin-btn {
+  background-color: #232329;
+  color: #FFFFFF !important;
+  border: 1.5px solid #232329;
+  border-radius: 225px 15px 255px 15px / 15px 255px 15px 225px;
+}
+
+.linkedin-btn:hover {
+  background-color: #15151B;
+  border-color: #15151B;
 }
 
 /* Vector icon transitions inside capsules */
 .nav-icon {
-  color: var(--primary-charcoal);
-  opacity: 0.8;
+  color: rgba(30, 30, 36, 0.55);
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-capsule:hover .nav-icon {
-  transform: rotate(-10deg) scale(1.08);
+  transform: rotate(-12deg) scale(1.1);
 }
 
-.nav-icon-arrow {
-  color: #FFFFFF;
-  opacity: 0.85;
+.nav-icon-linkedin {
+  display: inline-block;
+  vertical-align: middle;
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-capsule:hover .nav-icon-arrow {
-  transform: translate(1.5px, -1.5px);
-}
-
-.nav-swirl-icon {
-  opacity: 0.95;
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.nav-capsule:hover .nav-swirl-icon {
-  transform: scale(1.15) rotate(15deg);
+.nav-capsule:hover .nav-icon-linkedin {
+  transform: scale(1.1) rotate(4deg);
 }
 
 /* TACTILE HOVER (+3% Spring) & PRESS COMPRESSION (scale: 0.95) */
