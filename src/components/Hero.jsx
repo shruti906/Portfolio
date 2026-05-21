@@ -9,8 +9,17 @@ export default function Hero() {
       </div>
       
       <h1 className="hero-headline">
-        I blend <span className="marker-highlight">Data Science & AI</span> with <span className="marker-highlight">Full-Stack Development</span> to build systems that actually{' '}
-        <span className="rust-text">
+        <span className="morph-inflate-word" style={{ animationDelay: '0.05s' }}>I</span>{' '}
+        <span className="morph-inflate-word" style={{ animationDelay: '0.12s' }}>blend</span>{' '}
+        <span className="morph-inflate-word marker-highlight" style={{ animationDelay: '0.22s' }}>Data Science & AI</span>{' '}
+        <span className="morph-inflate-word" style={{ animationDelay: '0.32s' }}>with</span>{' '}
+        <span className="morph-inflate-word marker-highlight" style={{ animationDelay: '0.42s' }}>Full-Stack Development</span>{' '}
+        <span className="morph-inflate-word" style={{ animationDelay: '0.52s' }}>to</span>{' '}
+        <span className="morph-inflate-word" style={{ animationDelay: '0.62s' }}>build</span>{' '}
+        <span className="morph-inflate-word" style={{ animationDelay: '0.72s' }}>systems</span>{' '}
+        <span className="morph-inflate-word" style={{ animationDelay: '0.82s' }}>that</span>{' '}
+        <span className="morph-inflate-word" style={{ animationDelay: '0.92s' }}>actually</span>{' '}
+        <span className="morph-inflate-word rust-text" style={{ animationDelay: '1.02s' }}>
           work
           <svg className="svg-annotation" viewBox="0 0 200 20" preserveAspectRatio="none">
             <path d="M5,15 C50,2 150,2 195,15 C150,18 50,18 5,15" stroke="#C84B31" strokeWidth="4" fill="none" />
