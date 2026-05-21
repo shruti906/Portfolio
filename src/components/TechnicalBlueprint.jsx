@@ -1,0 +1,109 @@
+import React, { useEffect, useRef } from 'react';
+
+export default function TechnicalBlueprint() {
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    // Add smooth horizontal scrolling on mouse wheel
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY * 1.2;
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
+
+  const educationData = [
+    {
+      year: '2023 – Present',
+      emoji: '🎓',
+      institution: 'BML Munjal University',
+      degree: 'B.Tech CSE',
+      spec: 'Data Science & AI',
+      grade: 'CGPA: 7.00',
+      color: 'purple'
+    },
+    {
+      year: '2021 – 2023',
+      emoji: '📜',
+      institution: 'CBSE Science',
+      degree: 'Class XII',
+      spec: 'Patna, Bihar',
+      grade: 'Score: 82.3%',
+      color: 'teal'
+    },
+    {
+      year: '2011 – 2021',
+      emoji: '📘',
+      institution: 'ICSE',
+      degree: 'Class X',
+      spec: 'Patna, Bihar',
+      grade: 'Score: 86%',
+      color: 'purple'
+    }
+  ];
+
+  return (
+    <section className="blueprint-dark-section">
+      <div className="section-title-wrapper">
+        <h2 className="section-title text-light">
+          Technical Blueprint
+          <svg className="svg-annotation circle-annotation" viewBox="0 0 200 80" preserveAspectRatio="none">
+            <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#38f9d7" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+          </svg>
+        </h2>
+      </div>
+
+      <div className="timeline-instructions handwritten">
+        ← Scroll horizontally or use trackpad to explore →
+      </div>
+
+      <div 
+        className="blueprint-horizontal-timeline" 
+        ref={scrollContainerRef}
+      >
+        <div className="timeline-track-line"></div>
+        
+        <div className="timeline-cards-wrapper">
+          {educationData.map((edu, idx) => (
+            <div 
+              key={idx} 
+              className={`timeline-card-node ${edu.color}`}
+              style={{ animationDelay: `${idx * 0.2}s` }}
+            >
+              {/* Animated connector dot */}
+              <div className="timeline-connector-dot">
+                <div className="pulse-ring"></div>
+              </div>
+              
+              {/* Year Label */}
+              <div className="timeline-chunky-year">
+                {edu.year}
+              </div>
+              
+              {/* Glowing Card */}
+              <div className="flat-card neon-card">
+                <div className="card-emoji-header">{edu.emoji}</div>
+                <h3 className="neon-institution">{edu.institution}</h3>
+                <h4 className="neon-degree">{edu.degree}</h4>
+                <p className="neon-spec">{edu.spec}</p>
+                <div className="neon-grade">{edu.grade}</div>
+                
+                {/* Visual stamp highlight */}
+                <div className="neon-corner-glow"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

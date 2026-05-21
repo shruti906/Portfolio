@@ -1,19 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import CustomCursor from './components/CustomCursor.jsx';
 import Hero from './components/Hero.jsx';
 import CaseStudies from './components/CaseStudies.jsx';
 import Toolkit from './components/Toolkit.jsx';
-import FigmaPanel from './components/FigmaPanel.jsx';
-import BlueprintDisplay from './components/BlueprintDisplay.jsx';
+import TechnicalBlueprint from './components/TechnicalBlueprint.jsx';
 import Footer from './components/Footer.jsx';
 
 export default function App() {
-  // Shared Figma Properties Simulator States
-  const [tint, setTint] = useState('var(--sage-green)');
-  const [fontWeight, setFontWeight] = useState('bold');
-  const [showCredentials, setShowCredentials] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
-
   useEffect(() => {
     // Scroll reveal observer options
     const observerOptions = {
@@ -69,40 +62,11 @@ export default function App() {
         <main>
           <CaseStudies />
           <Toolkit />
-          
-          {/* ================= SECTION 5: EDUCATION & TECHNICAL BLUEPRINT ================= */}
-          <section style={{ padding: '60px 0' }}>
-            <div className="section-title-wrapper">
-              <h2 className="section-title">
-                Technical Blueprint
-                <svg className="svg-annotation circle-annotation" viewBox="0 0 200 80" preserveAspectRatio="none">
-                  <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#C84B31" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                </svg>
-              </h2>
-            </div>
-
-            <div className="blueprint-split">
-              <FigmaPanel 
-                tint={tint}
-                onTintChange={setTint}
-                fontWeight={fontWeight}
-                onFontWeightChange={setFontWeight}
-                showCredentials={showCredentials}
-                onShowCredentialsChange={setShowCredentials}
-                darkMode={darkMode}
-                onDarkModeChange={setDarkMode}
-              />
-              <BlueprintDisplay 
-                tint={tint}
-                fontWeight={fontWeight}
-                showCredentials={showCredentials}
-                darkMode={darkMode}
-              />
-            </div>
-          </section>
+          <TechnicalBlueprint />
         </main>
         <Footer />
       </div>
     </>
   );
 }
+
