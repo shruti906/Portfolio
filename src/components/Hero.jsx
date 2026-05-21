@@ -7,9 +7,23 @@ export default function Hero() {
   const rightPupilRef = useRef(null);
 
   useEffect(() => {
+    let animationFrameId;
+    const mouseCoords = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
     const handleMouseMove = (e) => {
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+      mouseCoords.x = e.clientX;
+      mouseCoords.y = e.clientY;
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    const updateEyes = () => {
+      // Follow spring-physics cursor follower coordinates if available, otherwise mouse
+      const targetX = (window.__customCursorCoords && window.innerWidth > 768)
+        ? window.__customCursorCoords.x
+        : mouseCoords.x;
+      const targetY = (window.__customCursorCoords && window.innerWidth > 768)
+        ? window.__customCursorCoords.y
+        : mouseCoords.y;
 
       const trackEye = (eyeEl, pupilEl) => {
         if (!eyeEl || !pupilEl) return;
@@ -17,12 +31,12 @@ export default function Hero() {
         const eyeCenterX = rect.left + rect.width / 2;
         const eyeCenterY = rect.top + rect.height / 2;
 
-        const vx = mouseX - eyeCenterX;
-        const vy = mouseY - eyeCenterY;
+        const vx = targetX - eyeCenterX;
+        const vy = targetY - eyeCenterY;
         const dist = Math.sqrt(vx * vx + vy * vy);
 
         // Constrained maximum movement of pupil in pixels (clamped to eyeball boundary)
-        const maxMove = 3.5; 
+        const maxMove = 3.5;
         let dx = 0;
         let dy = 0;
 
@@ -37,11 +51,15 @@ export default function Hero() {
 
       trackEye(leftEyeRef.current, leftPupilRef.current);
       trackEye(rightEyeRef.current, rightPupilRef.current);
+
+      animationFrameId = requestAnimationFrame(updateEyes);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    animationFrameId = requestAnimationFrame(updateEyes);
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -93,11 +111,11 @@ export default function Hero() {
             
             {/* Left Eye */}
             <circle ref={leftEyeRef} cx="40" cy="40" r="8" stroke="#1E1E24" strokeWidth="3" fill="#FFFFFF" />
-            <circle ref={leftPupilRef} cx="40" cy="40" r="3.5" fill="#1E1E24" style={{ transition: 'transform 0.05s ease-out' }} />
+            <circle ref={leftPupilRef} cx="40" cy="40" r="3.5" fill="#1E1E24" />
             
             {/* Right Eye */}
             <circle ref={rightEyeRef} cx="60" cy="40" r="8" stroke="#1E1E24" strokeWidth="3" fill="#FFFFFF" />
-            <circle ref={rightPupilRef} cx="60" cy="40" r="3.5" fill="#1E1E24" style={{ transition: 'transform 0.05s ease-out' }} />
+            <circle ref={rightPupilRef} cx="60" cy="40" r="3.5" fill="#1E1E24" />
             
             {/* Cute Smile */}
             <path d="M40,55 Q50,65 60,55" stroke="#1E1E24" strokeWidth="3" fill="none" strokeLinecap="round" />

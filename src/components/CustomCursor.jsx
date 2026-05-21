@@ -64,6 +64,12 @@ export default function CustomCursor() {
       cursorCoords.current.x += velocity.current.x * dt;
       cursorCoords.current.y += velocity.current.y * dt;
 
+      // Share coords globally for other elements (like eye tracking) to follow
+      window.__customCursorCoords = {
+        x: cursorCoords.current.x,
+        y: cursorCoords.current.y
+      };
+
       if (cursorRef.current) {
         cursorRef.current.style.left = `${cursorCoords.current.x}px`;
         cursorRef.current.style.top = `${cursorCoords.current.y}px`;
@@ -76,6 +82,10 @@ export default function CustomCursor() {
     const initMouse = (e) => {
       cursorCoords.current.x = e.clientX;
       cursorCoords.current.y = e.clientY;
+      window.__customCursorCoords = {
+        x: e.clientX,
+        y: e.clientY
+      };
       window.removeEventListener('mousemove', initMouse);
     };
     window.addEventListener('mousemove', initMouse);

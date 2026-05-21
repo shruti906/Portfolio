@@ -189,6 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* SVG draw-in animation for 'actually work' contour line */
 .rust-text .svg-annotation path {
+  transition: none !important;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: draw-svg-emphasis-loop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
