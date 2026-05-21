@@ -1230,6 +1230,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.philosophy-subtext {
+  font-size: 1.3rem;
+  color: var(--primary-charcoal);
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 .marker-highlight-green {
   background: linear-gradient(120deg, #9cfb42 0%, #8eff22 100%);
   padding: 2px 6px;
@@ -1240,14 +1248,14 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
-/* Column 2: Waving Girl Avatar */
+/* Column 2: Waving Bob-Hair Girl */
 .footer-avatar-column {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  gap: 16px;
+  gap: 12px;
 }
 
 .avatar-chat-bubble-container {
@@ -1309,12 +1317,12 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible;
 }
 
-@keyframes wave-arm {
+@keyframes wave-bob-arm {
   0% {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(-12deg);
+    transform: rotate(-10deg);
   }
   100% {
     transform: rotate(0deg);
@@ -1322,8 +1330,57 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .waving-arm-group {
-  transform-origin: 80px 168px;
-  animation: wave-arm 1.6s ease-in-out infinite;
+  transform-origin: 72px 178px;
+  animation: wave-bob-arm 1.6s ease-in-out infinite;
+}
+
+.avatar-meta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.avatar-label-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary-charcoal);
+  margin: 0;
+}
+
+.avatar-label-debug {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+.avatar-geekout-bubble {
+  background-color: #fbf8f5;
+  border: 2px dashed var(--primary-charcoal);
+  border-radius: 12px;
+  padding: 12px 16px;
+  max-width: 250px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 3px 3px 0px var(--primary-charcoal);
+  margin-top: 12px;
+}
+
+.geekout-emoji {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.geekout-text {
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--primary-charcoal);
+  margin: 0;
+  text-align: left;
 }
 
 /* Column 3: Contact Bubbles */
@@ -1406,18 +1463,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .linkedin-bubble:hover {
+  background-color: #e8f4fd;
+  color: #0077b5;
+  border-color: #0077b5;
+  box-shadow: 7px 7px 0px #0077b5;
   transform: translate(-2px, -2px);
-  box-shadow: 7px 7px 0px var(--primary-charcoal);
-  background-color: #fbfbfb;
 }
 
 .linkedin-bubble:active {
   transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0px var(--primary-charcoal);
+  box-shadow: 3px 3px 0px #0077b5;
 }
 
-.linkedin-icon-svg {
-  flex-shrink: 0;
+.github-bubble {
+  border-radius: 225px 15px 255px 15px / 15px 255px 15px 225px;
+  background-color: #FFFFFF;
+}
+
+.github-bubble:hover {
+  background-color: #f6f8fa;
+  color: #24292e;
+  border-color: #24292e;
+  box-shadow: 7px 7px 0px #24292e;
+  transform: translate(-2px, -2px);
+}
+
+.github-bubble:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px #24292e;
+}
+
+.leetcode-bubble {
+  border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;
+  background-color: #FFFFFF;
+}
+
+.leetcode-bubble:hover {
+  background-color: #fff8f0;
+  color: #ffa116;
+  border-color: #ffa116;
+  box-shadow: 7px 7px 0px #ffa116;
+  transform: translate(-2px, -2px);
+}
+
+.leetcode-bubble:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px #ffa116;
 }
 
 .footer-credits {
@@ -1430,20 +1521,6 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   gap: 12px;
   align-items: center;
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-links a {
-  color: var(--primary-charcoal);
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  font-size: 0.95rem;
 }
 
 /* ================= RESPONSIVE STYLES ================= */
