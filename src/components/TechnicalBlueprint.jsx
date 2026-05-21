@@ -32,7 +32,8 @@ export default function TechnicalBlueprint() {
       cardClass: 'card-rust',
       rot: '-1.5deg',
       stackRot: '-4deg',
-      stackRotHover: '-7deg'
+      stackRotHover: '-7deg',
+      stackBg: 'var(--lavender)'
     },
     {
       year: '2021 – 2023',
@@ -44,7 +45,8 @@ export default function TechnicalBlueprint() {
       cardClass: 'card-sage',
       rot: '1deg',
       stackRot: '3deg',
-      stackRotHover: '5deg'
+      stackRotHover: '5deg',
+      stackBg: 'var(--rust-red)'
     },
     {
       year: '2011 – 2021',
@@ -56,7 +58,8 @@ export default function TechnicalBlueprint() {
       cardClass: 'card-lavender',
       rot: '-2deg',
       stackRot: '-3deg',
-      stackRotHover: '-6deg'
+      stackRotHover: '-6deg',
+      stackBg: 'var(--sage-green)'
     }
   ];
 
@@ -101,18 +104,24 @@ export default function TechnicalBlueprint() {
                 {edu.year}
               </div>
               
-              {/* Scrapbook Sticker Card */}
-              <div 
-                className={`scrapbook-card ${edu.cardClass}`}
-                style={{ 
-                  '--stack-rot': edu.stackRot,
-                  '--stack-rot-hover': edu.stackRotHover
-                }}
-              >
-                <span className="card-emoji-header">{edu.emoji}</span>
-                <h3 className="neon-institution">{edu.institution}</h3>
-                <h4 className="neon-degree">{edu.degree}</h4>
-                {edu.grade && <div className="neon-grade">{edu.grade}</div>}
+              {/* Scrapbook Sticker Card Sibling Container */}
+              <div className="scrapbook-card-container">
+                <div 
+                  className="scrapbook-card-stack"
+                  style={{ 
+                    '--stack-rot': edu.stackRot,
+                    '--stack-rot-hover': edu.stackRotHover,
+                    backgroundColor: edu.stackBg
+                  }}
+                ></div>
+                <div 
+                  className={`scrapbook-card ${edu.cardClass}`}
+                >
+                  <span className="card-emoji-header">{edu.emoji}</span>
+                  <h3 className="neon-institution">{edu.institution}</h3>
+                  <h4 className="neon-degree">{edu.degree}</h4>
+                  {edu.grade && <div className="neon-grade">{edu.grade}</div>}
+                </div>
               </div>
             </div>
           ))}
