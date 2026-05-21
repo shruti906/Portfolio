@@ -1197,129 +1197,253 @@ h1, h2, h3, h4, h5, h6 {
   border-top: var(--border-width) solid var(--primary-charcoal);
   padding: 80px 0 60px 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.footer-left {
+.footer-column {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
 }
 
-.footer-philosophy {
-  font-size: 1.4rem;
+/* Column 1: Philosophy */
+.footer-philosophy-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.philosophy-heading {
+  font-size: 2.2rem;
+  color: var(--primary-charcoal);
+  margin: 0 0 10px 0;
+}
+
+.philosophy-paragraph {
+  font-size: 1.15rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: var(--primary-charcoal);
+  margin: 0;
 }
 
-.footer-right {
+.marker-highlight-green {
+  background: linear-gradient(120deg, #9cfb42 0%, #8eff22 100%);
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 2px 0;
+  transform: rotate(-1deg);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* Column 2: Waving Girl Avatar */
+.footer-avatar-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 24px;
+  position: relative;
+  gap: 16px;
 }
 
-.chat-bubble-cta {
+.avatar-chat-bubble-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.avatar-name-label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.avatar-chat-bubble {
   background-color: var(--electric-blue);
   color: white;
-  border: var(--border-width) solid var(--primary-charcoal);
-  border-radius: var(--border-radius-md);
-  padding: 24px;
-  font-size: 1.5rem;
+  border: 3px solid var(--primary-charcoal);
+  border-radius: 20px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
   font-weight: 800;
-  width: 100%;
-  position: relative;
-  box-shadow: var(--shadow-flat);
   text-align: center;
+  position: relative;
+  box-shadow: 4px 4px 0px var(--primary-charcoal);
+  max-width: 220px;
 }
 
-.chat-bubble-cta::after {
+.avatar-chat-bubble::after {
   content: "";
   position: absolute;
-  bottom: -20px;
-  left: 40px;
+  bottom: -12px;
+  left: 45%;
+  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 20px 20px 0 0;
+  border-width: 12px 12px 0 12px;
   border-color: var(--electric-blue) transparent transparent transparent;
 }
 
-.chat-bubble-cta::before {
+.avatar-chat-bubble::before {
   content: "";
   position: absolute;
-  bottom: -24px;
-  left: 38px;
+  bottom: -16px;
+  left: 45%;
+  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 22px 22px 0 0;
+  border-width: 15px 15px 0 15px;
   border-color: var(--primary-charcoal) transparent transparent transparent;
   z-index: -1;
 }
 
-.contact-card {
-  width: 100%;
-  padding: 24px;
+.waving-girl-svg {
+  overflow: visible;
+}
+
+@keyframes wave-arm {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-12deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.waving-arm-group {
+  transform-origin: 80px 168px;
+  animation: wave-arm 1.6s ease-in-out infinite;
+}
+
+/* Column 3: Contact Bubbles */
+.footer-contact-column {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
 }
 
-.email-copy-wrapper {
+.down-arrows-row {
   display: flex;
-  border: var(--border-width) solid var(--primary-charcoal);
-  border-radius: var(--border-radius-sm);
-  overflow: hidden;
-  box-shadow: var(--shadow-flat-sm);
+  gap: 16px;
+  color: #ccc;
+  margin-bottom: 8px;
+  animation: bounce-arrows 2s infinite ease-in-out;
 }
 
-.email-address {
-  flex-grow: 1;
-  background-color: var(--bg-color);
-  padding: 12px;
-  font-family: var(--font-code);
+@keyframes bounce-arrows {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.down-arrow-svg {
+  flex-shrink: 0;
+}
+
+.contact-bubble {
+  width: 100%;
+  max-width: 280px;
+  padding: 14px 20px;
   font-size: 1rem;
   font-weight: 700;
+  text-align: center;
+  border: 3px solid var(--primary-charcoal);
+  box-shadow: 5px 5px 0px var(--primary-charcoal);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.copy-btn {
-  background-color: var(--lavender);
-  border: none;
-  border-left: var(--border-width) solid var(--primary-charcoal);
-  padding: 0 20px;
-  font-weight: 700;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--primary-charcoal);
   cursor: none;
-  transition: var(--transition-spring);
 }
 
-.copy-btn:hover {
-  background-color: var(--rust-red);
-  color: white;
+.email-bubble {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  font-family: var(--font-code);
+  background-color: #FFFFFF;
 }
 
-.footer-social-links {
-  display: flex;
-  gap: 16px;
-  width: 100%;
+.email-bubble:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px var(--primary-charcoal);
+  background-color: #fbfbfb;
 }
 
-.footer-social-links a {
-  flex-grow: 1;
-  text-align: center;
+.email-bubble:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px var(--primary-charcoal);
+}
+
+.tap-to-copy-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: -4px;
+  margin-bottom: 12px;
+}
+
+.linkedin-bubble {
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  background-color: #FFFFFF;
+}
+
+.linkedin-bubble:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px var(--primary-charcoal);
+  background-color: #fbfbfb;
+}
+
+.linkedin-bubble:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px var(--primary-charcoal);
+}
+
+.linkedin-icon-svg {
+  flex-shrink: 0;
 }
 
 .footer-credits {
-  grid-column: span 2;
+  grid-column: span 3;
   text-align: center;
   font-size: 0.85rem;
   color: var(--text-muted);
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--primary-charcoal);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  font-size: 0.95rem;
 }
 
 /* ================= RESPONSIVE STYLES ================= */
