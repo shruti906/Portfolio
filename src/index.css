@@ -876,9 +876,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================= SECTION 5: EDUCATION & TECHNICAL BLUEPRINT ================= */
-.blueprint-dark-section {
-  background-color: #121214;
-  color: #FFFFFF;
+.education-section {
+  background-color: var(--bg-card);
+  color: var(--primary-charcoal);
   border: var(--border-width) solid var(--primary-charcoal);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-flat);
@@ -889,22 +889,24 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-spring);
 }
 
-.blueprint-dark-section:hover {
+.education-section:hover {
   transform: translate(-4px, -4px);
   box-shadow: var(--shadow-flat-hover);
 }
 
-.text-light {
-  color: #FFFFFF !important;
-}
-
 .timeline-instructions {
-  color: #8892B0;
+  color: var(--text-muted);
   text-align: center;
   margin-bottom: 30px;
   font-size: 1.1rem;
   letter-spacing: 0.05em;
   transform: rotate(-1deg);
+  animation: sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  0% { transform: rotate(-1.5deg) translateX(-5px); }
+  100% { transform: rotate(1deg) translateX(5px); }
 }
 
 .blueprint-horizontal-timeline {
@@ -915,7 +917,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 40px;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #A78BFA #1E1E24;
+  scrollbar-color: var(--rust-red) #FFF;
 }
 
 .blueprint-horizontal-timeline::-webkit-scrollbar {
@@ -923,42 +925,54 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blueprint-horizontal-timeline::-webkit-scrollbar-track {
-  background: #1E1E24;
+  background: #FFF;
+  border: var(--border-width) solid var(--primary-charcoal);
   border-radius: 4px;
 }
 
 .blueprint-horizontal-timeline::-webkit-scrollbar-thumb {
-  background: #A78BFA;
+  background: var(--rust-red);
   border-radius: 4px;
-  border: 2px solid #121214;
+  border: 1px solid var(--primary-charcoal);
 }
 
+/* Conveyor belt dashed line */
 .timeline-track-line {
   position: absolute;
   top: 73px;
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #A78BFA, #38f9d7, transparent);
+  background: repeating-linear-gradient(90deg, var(--primary-charcoal) 0, var(--primary-charcoal) 12px, transparent 12px, transparent 24px);
   z-index: 1;
+  animation: flow 8s linear infinite;
+}
+
+@keyframes flow {
+  to {
+    background-position: 48px 0;
+  }
 }
 
 .timeline-cards-wrapper {
   display: flex;
-  gap: 60px;
+  gap: 80px;
   position: relative;
   z-index: 2;
   width: max-content;
 }
 
-@keyframes fadeSlideUp {
-  from {
+@keyframes scrapbookPopIn {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px) scale(0.8) rotate(-5deg);
   }
-  to {
+  70% {
+    transform: translateY(-10px) scale(1.03) rotate(3deg);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1) rotate(var(--rot, 0deg));
   }
 }
 
@@ -967,29 +981,33 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 320px;
+  width: 330px;
   flex-shrink: 0;
-  animation: fadeSlideUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   opacity: 0;
+  transform: rotate(var(--rot, 0deg));
+  animation: scrapbookPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
+/* Timeline Connectors matching image */
 .timeline-connector-dot {
   position: absolute;
   top: 0px;
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: #121214;
-  border: 4px solid #A78BFA;
+  background-color: var(--lavender);
+  border: 3px solid var(--primary-charcoal);
   z-index: 3;
   transition: var(--transition-spring);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 1px 1px 0px var(--primary-charcoal);
 }
 
-.timeline-card-node.teal .timeline-connector-dot {
-  border-color: #38f9d7;
+.timeline-card-node:hover .timeline-connector-dot {
+  transform: scale(1.3);
+  background-color: var(--rust-red);
 }
 
 .pulse-ring {
@@ -997,148 +1015,186 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 2px solid rgba(167, 139, 250, 0.4);
-  animation: pulse 2s infinite ease-out;
+  border: 2px solid rgba(214, 199, 232, 0.6);
+  animation: pulse-lavender 2s infinite ease-out;
 }
 
-.timeline-card-node.teal .pulse-ring {
-  border-color: rgba(56, 249, 215, 0.4);
-}
-
-@keyframes pulse {
+@keyframes pulse-lavender {
   0% {
     transform: scale(1);
     opacity: 1;
   }
   100% {
-    transform: scale(1.8);
+    transform: scale(2);
     opacity: 0;
   }
 }
 
+/* Chunky Year Label */
 .timeline-chunky-year {
   margin-top: 44px;
   margin-bottom: 24px;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 900;
   letter-spacing: -0.04em;
-  color: #FFFFFF;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  color: var(--primary-charcoal);
   transition: var(--transition-spring);
   font-family: var(--font-main);
+  background: linear-gradient(180deg, transparent 60%, rgba(214, 199, 232, 0.4) 60%);
+  padding: 0 8px;
+  border-radius: 4px;
 }
 
 .timeline-card-node:hover .timeline-chunky-year {
-  transform: scale(1.1);
-  color: #A78BFA;
-  text-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
+  transform: scale(1.15) rotate(-3deg);
+  background: linear-gradient(180deg, transparent 50%, var(--lavender) 50%);
+  color: var(--primary-charcoal);
 }
 
-.timeline-card-node.teal:hover .timeline-chunky-year {
-  color: #38f9d7;
-  text-shadow: 0 0 15px rgba(56, 249, 215, 0.4);
+.timeline-card-node.sage:hover .timeline-chunky-year {
+  background: linear-gradient(180deg, transparent 50%, var(--sage-green) 50%);
 }
 
-.timeline-card-node:hover .timeline-connector-dot {
-  transform: scale(1.25);
-  background-color: #A78BFA;
+.timeline-card-node.rust:hover .timeline-chunky-year {
+  background: linear-gradient(180deg, transparent 50%, var(--rust-red) 50%);
+  color: white;
 }
 
-.timeline-card-node.teal:hover .timeline-connector-dot {
-  background-color: #38f9d7;
-}
-
-.neon-card {
+/* Scrapbook Sticker Card styling */
+.scrapbook-card {
   width: 100%;
-  padding: 24px;
-  background-color: #1E1E24;
-  color: #FFFFFF;
-  border: 2px solid #2D2D34;
+  padding: 28px;
+  border: var(--border-width) solid var(--primary-charcoal);
   border-radius: var(--border-radius-md);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: var(--shadow-flat);
+  transition: var(--transition-spring);
   position: relative;
-  overflow: hidden;
   text-align: left;
 }
 
-.timeline-card-node:hover .neon-card {
-  transform: translateY(-8px);
-  border-color: #A78BFA;
-  box-shadow: 0 15px 35px rgba(167, 139, 250, 0.2), 0 0 15px rgba(167, 139, 250, 0.1);
+/* Stacked paper effect behind the card */
+.scrapbook-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-card);
+  border: var(--border-width) solid var(--primary-charcoal);
+  border-radius: var(--border-radius-md);
+  z-index: -1;
+  transform: rotate(var(--stack-rot, -3deg));
+  transition: var(--transition-spring);
 }
 
-.timeline-card-node.teal:hover .neon-card {
-  border-color: #38f9d7;
-  box-shadow: 0 15px 35px rgba(56, 249, 215, 0.2), 0 0 15px rgba(56, 249, 215, 0.1);
+.timeline-card-node:hover .scrapbook-card {
+  transform: translateY(-10px) rotate(1.5deg);
+  box-shadow: var(--shadow-flat-hover);
 }
 
+.timeline-card-node:hover .scrapbook-card::before {
+  transform: rotate(var(--stack-rot-hover, -6deg)) translate(-6px, 6px);
+  background-color: #FFF;
+}
+
+/* Emojis */
 .card-emoji-header {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 12px;
+  display: inline-block;
+  transition: var(--transition-spring);
+}
+
+.timeline-card-node:hover .card-emoji-header {
+  animation: emoji-bounce 0.6s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
+}
+
+@keyframes emoji-bounce {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-8px) scale(1.1) rotate(5deg); }
+  100% { transform: translateY(0) scale(1) rotate(-5deg); }
+}
+
+/* Card typography matching sticker colors */
+.scrapbook-card.card-rust {
+  background-color: var(--rust-red);
+  color: white;
+}
+.scrapbook-card.card-rust::before {
+  background-color: var(--lavender);
+}
+.scrapbook-card.card-rust .neon-institution {
+  color: white;
+}
+.scrapbook-card.card-rust .neon-degree {
+  color: var(--lavender);
+}
+.scrapbook-card.card-rust .neon-grade {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.scrapbook-card.card-sage {
+  background-color: var(--sage-green);
+  color: var(--primary-charcoal);
+}
+.scrapbook-card.card-sage::before {
+  background-color: var(--rust-red);
+}
+.scrapbook-card.card-sage .neon-institution {
+  color: var(--primary-charcoal);
+}
+.scrapbook-card.card-sage .neon-degree {
+  color: var(--rust-red);
+}
+.scrapbook-card.card-sage .neon-grade {
+  color: var(--primary-charcoal);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.scrapbook-card.card-lavender {
+  background-color: var(--lavender);
+  color: var(--primary-charcoal);
+}
+.scrapbook-card.card-lavender::before {
+  background-color: var(--sage-green);
+}
+.scrapbook-card.card-lavender .neon-institution {
+  color: var(--primary-charcoal);
+}
+.scrapbook-card.card-lavender .neon-degree {
+  color: var(--rust-red);
+}
+.scrapbook-card.card-lavender .neon-grade {
+  color: var(--primary-charcoal);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .neon-institution {
   font-size: 1.45rem;
   font-weight: 800;
   margin-bottom: 8px;
-  color: #FFFFFF;
   line-height: 1.25;
 }
 
 .neon-degree {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #A78BFA;
   margin-bottom: 4px;
-}
-
-.timeline-card-node.teal .neon-degree {
-  color: #38f9d7;
-}
-
-.neon-spec {
-  font-size: 0.95rem;
-  color: #8892B0;
-  margin-bottom: 18px;
 }
 
 .neon-grade {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #A78BFA;
-  background-color: rgba(167, 139, 250, 0.08);
   display: inline-block;
   padding: 5px 12px;
   border-radius: 6px;
-  border: 1px solid rgba(167, 139, 250, 0.15);
   font-family: var(--font-code);
-}
-
-.timeline-card-node.teal .neon-grade {
-  color: #38f9d7;
-  background-color: rgba(56, 249, 215, 0.08);
-  border-color: rgba(56, 249, 215, 0.15);
-}
-
-.neon-corner-glow {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  background: radial-gradient(circle at 100% 0%, rgba(167, 139, 250, 0.35), transparent 70%);
-  transition: var(--transition-smooth);
-  pointer-events: none;
-}
-
-.timeline-card-node.teal .neon-corner-glow {
-  background: radial-gradient(circle at 100% 0%, rgba(56, 249, 215, 0.35), transparent 70%);
-}
-
-.timeline-card-node:hover .neon-corner-glow {
-  width: 70px;
-  height: 70px;
+  margin-top: 10px;
 }
 
 

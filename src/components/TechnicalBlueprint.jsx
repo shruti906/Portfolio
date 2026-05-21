@@ -28,7 +28,11 @@ export default function TechnicalBlueprint() {
       institution: 'BML Munjal University',
       degree: 'B.Tech CSE — Data Science & AI',
       grade: 'CGPA: 7.00',
-      color: 'purple'
+      color: 'rust',
+      cardClass: 'card-rust',
+      rot: '-1.5deg',
+      stackRot: '-4deg',
+      stackRotHover: '-7deg'
     },
     {
       year: '2021 – 2023',
@@ -36,7 +40,11 @@ export default function TechnicalBlueprint() {
       institution: 'CBSE Science (Patna, Bihar)',
       degree: 'Class XII — 82.3%',
       grade: '',
-      color: 'teal'
+      color: 'sage',
+      cardClass: 'card-sage',
+      rot: '1deg',
+      stackRot: '3deg',
+      stackRotHover: '5deg'
     },
     {
       year: '2011 – 2021',
@@ -44,17 +52,21 @@ export default function TechnicalBlueprint() {
       institution: 'ICSE (Patna, Bihar)',
       degree: 'Class X — 86%',
       grade: '',
-      color: 'purple'
+      color: 'lavender',
+      cardClass: 'card-lavender',
+      rot: '-2deg',
+      stackRot: '-3deg',
+      stackRotHover: '-6deg'
     }
   ];
 
   return (
-    <section className="blueprint-dark-section">
+    <section className="education-section">
       <div className="section-title-wrapper">
-        <h2 className="section-title text-light">
-          Technical Blueprint
+        <h2 className="section-title">
+          Education
           <svg className="svg-annotation circle-annotation" viewBox="0 0 200 80" preserveAspectRatio="none">
-            <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#38f9d7" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+            <path d="M10,40 C10,15 90,8 180,15 C200,30 180,65 90,70 C10,70 5,50 10,40" stroke="#C84B31" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
           </svg>
         </h2>
       </div>
@@ -74,7 +86,10 @@ export default function TechnicalBlueprint() {
             <div 
               key={idx} 
               className={`timeline-card-node ${edu.color}`}
-              style={{ animationDelay: `${idx * 0.2}s` }}
+              style={{ 
+                '--rot': edu.rot,
+                animationDelay: `${idx * 0.25}s`
+              }}
             >
               {/* Animated connector dot */}
               <div className="timeline-connector-dot">
@@ -86,15 +101,18 @@ export default function TechnicalBlueprint() {
                 {edu.year}
               </div>
               
-              {/* Glowing Card */}
-              <div className="flat-card neon-card">
-                <div className="card-emoji-header">{edu.emoji}</div>
+              {/* Scrapbook Sticker Card */}
+              <div 
+                className={`scrapbook-card ${edu.cardClass}`}
+                style={{ 
+                  '--stack-rot': edu.stackRot,
+                  '--stack-rot-hover': edu.stackRotHover
+                }}
+              >
+                <span className="card-emoji-header">{edu.emoji}</span>
                 <h3 className="neon-institution">{edu.institution}</h3>
                 <h4 className="neon-degree">{edu.degree}</h4>
                 {edu.grade && <div className="neon-grade">{edu.grade}</div>}
-                
-                {/* Visual stamp highlight */}
-                <div className="neon-corner-glow"></div>
               </div>
             </div>
           ))}
