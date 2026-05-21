@@ -5,6 +5,8 @@ import CaseStudies from './components/CaseStudies.jsx';
 import Toolkit from './components/Toolkit.jsx';
 import TechnicalBlueprint from './components/TechnicalBlueprint.jsx';
 import Footer from './components/Footer.jsx';
+import Navbar from './components/Navbar.jsx';
+
 
 export default function App() {
   useEffect(() => {
@@ -58,7 +60,9 @@ export default function App() {
   return (
     <>
       <CustomCursor />
+      <Navbar />
       <div className="app-container">
+
         <Hero />
         <main>
           <CaseStudies />

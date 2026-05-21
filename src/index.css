@@ -1741,3 +1741,220 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
   }
 }
+
+/* ==========================================================================
+   INTERACTIVE STICKY NAVIGATION HEADER (GLASSMORPHISM & SPRING BADGES)
+   ========================================================================== */
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 76px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-15px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrolled state triggered past hero statement */
+.navbar-wrapper.scrolled {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.navbar-glass-bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(253, 253, 253, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: var(--border-width) solid var(--primary-charcoal);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* LEFT SIDE: DYNAMIC LOGO/SIGNATURE */
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.navbar-logo-badge {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: var(--border-width) solid var(--primary-charcoal);
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px var(--primary-charcoal);
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.15s ease-out;
+}
+
+.navbar-logo-svg {
+  width: 44px;
+  height: 44px;
+}
+
+/* Micro-interaction for logo hover */
+.navbar-logo-container:hover .navbar-logo-badge {
+  transform: scale(1.1) rotate(15deg) !important;
+  box-shadow: 5px 5px 0px var(--primary-charcoal);
+}
+
+.logo-text {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary-charcoal);
+  line-height: 1;
+  margin-top: 4px;
+  letter-spacing: -0.01em;
+}
+
+/* RIGHT SIDE: NAVIGATION STICKER PILLS */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 9999px;
+  border: var(--border-width) solid var(--primary-charcoal);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--primary-charcoal);
+  box-shadow: 3px 3px 0px var(--primary-charcoal);
+  background: #FFFFFF;
+  cursor: pointer;
+  
+  /* Bouncy spring-like physics translation and scale curve */
+  transition: 
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+    background-color 0.3s ease, 
+    border-color 0.3s ease, 
+    box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* My Work Pill Badge */
+.work-btn {
+  background-color: #FAF9F6; /* Crisp off-white */
+}
+
+.work-btn:hover {
+  background-color: #F0EEE9;
+}
+
+/* How I Think Pill Badge (Contrast solid graphite) */
+.resume-btn {
+  background-color: var(--primary-charcoal);
+  color: #FFFFFF;
+  box-shadow: 3px 3px 0px var(--rust-red); /* Contrasting rust-red shadow */
+}
+
+.resume-btn:hover {
+  background-color: #2D2D35;
+  box-shadow: 5px 5px 0px var(--rust-red);
+}
+
+/* Contact Pill Badge */
+.contact-btn {
+  background-color: #FFFFFF;
+}
+
+.contact-btn:hover {
+  background-color: #F8F9FA;
+}
+
+/* Vector icon interactive rotates */
+.nav-icon {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  color: var(--rust-red);
+}
+
+.nav-sticker:hover .nav-icon {
+  transform: rotate(15deg) scale(1.15);
+}
+
+.nav-icon-logo {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-sticker:hover .nav-icon-logo {
+  transform: scale(1.2) rotate(-12deg);
+}
+
+/* HOVER SPRING SCALING AND PRESSED TACTILE COMPRESSION */
+.nav-sticker:hover {
+  transform: scale(1.04);
+  box-shadow: 5px 5px 0px var(--primary-charcoal);
+}
+
+.nav-sticker:active {
+  transform: scale(0.95) !important;
+  box-shadow: 1px 1px 0px var(--primary-charcoal) !important;
+}
+
+.resume-btn:active {
+  box-shadow: 1px 1px 0px var(--rust-red) !important;
+}
+
+/* RESPONSIVE NAV MOBILE LAYOUT */
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    height: 68px;
+  }
+  .navbar-content {
+    padding: 0 16px;
+  }
+  .navbar-logo-badge {
+    width: 38px;
+    height: 38px;
+  }
+  .navbar-logo-svg {
+    width: 36px;
+    height: 36px;
+  }
+  .logo-text {
+    display: none; /* Hide signature text on mobile to fit badges nicely */
+  }
+  .navbar-links {
+    gap: 8px;
+  }
+  .nav-sticker {
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  .nav-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .nav-icon-logo {
+    width: 16px;
+    height: 16px;
+  }
+}
+

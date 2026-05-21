@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer-section">
+    <footer className="footer-section" id="contact-section">
       {/* COLUMN 1: PHILOSOPHY */}
       <div className="footer-column footer-philosophy-column">
         <h3 className="handwritten philosophy-heading">My Philosophy</h3>
